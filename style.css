@@ -22,40 +22,49 @@ body {
     color: white;
 }
 
+/* Header Styles */
 header {
-    margin-top: 20px;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 9%;
-    background-color: transparent;
-    filter: drop-shadow(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+  margin-top: 20px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 9%;
+  background-color: transparent;
+  filter: drop-shadow(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
 
+/* Logo */
 .logo {
-    font-size: 2.5rem;
-    color: #888686;
-    font-weight: 300;
-    cursor: pointer;
-    transition: 0.5s ease;
-    margin-left: -100px;
+  font-size: 2.5rem;
+  color: #888686;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.5s ease;
 }
 
 .logo:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
+
+/* Navigation */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 nav a {
   font-size: 1.8rem;
   color: white;
-  margin-left: 4rem;
   font-weight: 500;
   transition: 0.3s ease;
   border-bottom: 3px solid transparent;
+  text-decoration: none;
 }
 
 nav a:hover,
@@ -64,29 +73,46 @@ nav a.active {
   border-bottom: 3px solid #888686;
 }
 
+/* Hamburger menu (hidden by default) */
+.hamburger {
+  display: none;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Mobile Styles */
 @media (max-width: 995px) {
+  .hamburger {
+    display: block;
+  }
+
   nav {
     position: absolute;
     display: none;
-    top: 0;
+    top: 100%;
     right: 0;
-    width: 40%;
+    width: 60%;
     border-left: 3px solid #888686;
     border-bottom: 3px solid #888686;
     border-bottom-left-radius: 2rem;
     padding: 1rem;
     background-color: #161616;
-    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1000;
   }
 
   nav.active {
-    display: block;
+    display: flex;
   }
 
   nav a {
     display: block;
     font-size: 2rem;
-    margin: 3rem 0;
+    margin: 1.5rem 0;
+    width: 100%;
   }
 
   nav a:hover,
@@ -96,6 +122,7 @@ nav a.active {
     border-bottom: 0.5rem solid #888686;
   }
 }
+
 
 
 section {
@@ -472,6 +499,48 @@ span {
   .skill-item span {
     font-size: 1.2rem;
     color: #aaa; /* Grey subtext */
+  }
+  
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 3rem;
+      margin-bottom: 40px;
+    }
+  
+    .skills-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .skill-card {
+      padding: 20px;
+      height: auto;
+      width: 90%;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .skill-card h3 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+  
+    .skill-list {
+      grid-template-columns: 1fr; /* Single column */
+      gap: 10px;
+    }
+  
+    .skill-item {
+      font-size: 1.3rem;
+    }
+  
+    .skill-item i {
+      font-size: 2.2rem;
+    }
+  
+    .skill-item span {
+      font-size: 1rem;
+    }
   }
   
   /* My Projects */

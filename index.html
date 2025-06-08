@@ -8,18 +8,34 @@
     <link rel="stylesheet" href="style.css">
     <title>My Portfolio</title>
 </head>
-<body>
-    <header>
-        <a href="#" class="logo">HARSHIL PATEL</a>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
 
-        <nav>
-            <a href="#home" class="active"> Home</a>
-            <a href="#about" >About</a>
-            <a href="#skills" >Skills</a>
-            <a href="#projects" >Projects</a>
-            <a href="#contact" >Contact</a>
-        </nav>
-    </header>
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
+<body>
+  <header>
+    <a href="#" class="logo">HARSHIL PATEL</a>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+        ☰
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav id="nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
     <section class="home">
         <div class="home-img">
             <img src="main.jpg" alt="">
